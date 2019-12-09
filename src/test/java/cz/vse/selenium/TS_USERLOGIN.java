@@ -82,6 +82,7 @@ public class TS_USERLOGIN {
         Assert.assertTrue(driver.getTitle().startsWith("Rukovoditel | Dashboard"));
         driver.findElement(By.cssSelector(".fa-angle-down")).click();
         driver.findElement(By.cssSelector(".user > .dropdown-toggle")).click();
+        WebDriverWait wait = new WebDriverWait(driver, 1);
         driver.findElement(By.linkText("Logoff")).click();
         driver.quit();
     }
