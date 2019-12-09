@@ -83,11 +83,9 @@ public class AppTest {
         driver.findElement(By.cssSelector(".fa-angle-down")).click();
         driver.findElement(By.cssSelector(".user > .dropdown-toggle")).click();
         driver.findElement(By.linkText("Logoff")).click();
-
-
-
         driver.quit();
     }
+
     }
 
 
