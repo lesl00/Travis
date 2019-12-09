@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Travis.iml" filepath="$PROJECT_DIR$/Travis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/travis.yml" filepath="$PROJECT_DIR$/travis.yml" />
     </modules>
   </component>
 </project>
