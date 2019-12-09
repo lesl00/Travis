@@ -29,17 +29,16 @@ public class AppTest {
 
     @Before
     public void init() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+        driver = new ChromeDriver();
         ChromeOptions cho = new ChromeOptions();
-
-        boolean runOnTravis = true;
-        if (runOnTravis) {
-            cho.addArguments("headless");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-        }
-//        ChromeDriverService service = new ChromeDriverService()
-        driver = new ChromeDriver(cho);
-//        driver.manage().window().maximize();
+        cho.addArguments("--headless");
+        cho.addArguments("start-maximized");
+        cho.addArguments("window-size=1200,1100");
+        cho.addArguments("--disable-gpu");
+        cho.addArguments("--disable-extensions");
+       // driver = new ChromeDriver(cho);
+        driver.manage().window().maximize();
     }
 
     @After
