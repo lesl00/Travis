@@ -58,6 +58,36 @@ public class AppTest {
         Assert.assertTrue(driver.getTitle().startsWith("Rukovoditel | Dashboard"));
         driver.quit();
     }
+
+    @Test
+    public void login_negative_rukovoditel() {
+        driver.get(page);
+        WebElement searchInput = driver.findElement(By.name("username"));
+        searchInput.sendKeys("haha");
+        searchInput = driver.findElement(By.name("password"));
+        searchInput.sendKeys("123");
+        searchInput.sendKeys(Keys.ENTER);
+        Assert.assertTrue(!driver.getTitle().startsWith("Rukovoditel | Dashboard"));
+        driver.quit();
+    }
+
+    @Test
+    public void logout_rukovoditel() {
+        driver.get(page);
+        WebElement searchInput = driver.findElement(By.name("username"));
+        searchInput.sendKeys("rukovoditel");
+        searchInput = driver.findElement(By.name("password"));
+        searchInput.sendKeys("vse456ru");
+        searchInput.sendKeys(Keys.ENTER);
+        Assert.assertTrue(driver.getTitle().startsWith("Rukovoditel | Dashboard"));
+        driver.findElement(By.cssSelector(".fa-angle-down")).click();
+        driver.findElement(By.cssSelector(".user > .dropdown-toggle")).click();
+        driver.findElement(By.linkText("Logoff")).click();
+
+
+
+        driver.quit();
+    }
     }
 
 
