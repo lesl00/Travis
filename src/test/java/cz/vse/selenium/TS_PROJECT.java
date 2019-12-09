@@ -69,18 +69,23 @@ public class TS_PROJECT {
         searchInput.sendKeys(Keys.ENTER);
         Assert.assertTrue(driver.getTitle().startsWith("Rukovoditel | Dashboard"));
         driver.findElement(By.cssSelector(".li:nth-child(4) .title:nth-child(2)")).click();
-        driver.findElement(By.cssSelector(".btn-primary:nth-child(1)")).click();
+        driver.findElement(By.cssSelector(".btn-primary")).click();
         WebDriverWait wait = new WebDriverWait(driver, 2);
+        //High
         driver.findElement(By.id("fields_156")).click();
         driver.findElement(By.id("fields_156")).select(1);
         Assert.assertTrue(driver.findElement(By.id("fields_156")).select(1).isDisplayed());
+        //Status NEW
         driver.findElement(By.id("fields_157")).click();
         driver.findElement(By.id("fields_157")).select(2);
         driver.findElement(By.id("fields_157")).select(0);
         Assert.assertTrue(driver.findElement(By.id("fields_157")).select(0).isDisplayed());
+        //Name
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("fields_158")));
         driver.findElement(By.id("fields_158")).click();
         driver.findElement(By.id("fields_158")).sendKeys("lesl00");
         Assert.assertTrue(driver.findElement(By.id("fields_158")).sendKeys("lesl00").isDisplayed());
+
         driver.findElement(By.id("fields_159")).click();
         driver.findElement(By.cssSelector("td[class='active day']")).click();
         driver.findElement(By.className("btn-primary-modal-action")).click();
