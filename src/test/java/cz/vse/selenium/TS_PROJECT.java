@@ -81,6 +81,9 @@ public class TS_PROJECT {
         driver.findElement(By.id("fields_158")).click();
         driver.findElement(By.id("fields_158")).sendKeys("lesl00");
         Assert.assertTrue(driver.findElement(By.id("fields_158")).sendKeys("lesl00").isDisplayed());
+        driver.findElement(By.id("fields_159")).click();
+        driver.findElement(By.cssSelector("td[class='active day']")).click();
+        driver.findElement(By.className("btn-primary-modal-action")).click();
 
 
 
